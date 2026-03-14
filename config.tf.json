@@ -9,7 +9,7 @@
   "output": {
     "droplet_ip": {
       "description": "The public IPv4 address of the Droplet",
-      "value": "${digitalocean_droplet.digitalocean-nix-tf.ipv4_address}"
+      "value": "${digitalocean_droplet.neko.ipv4_address}"
     }
   },
   "provider": {
@@ -18,7 +18,7 @@
   "resource": {
     "digitalocean_custom_image": {
       "nixos": {
-        "name": "digitalocean-nix-tf",
+        "name": "neko-nixos",
         "regions": [
           "sgp1"
         ],
@@ -26,11 +26,11 @@
       }
     },
     "digitalocean_droplet": {
-      "digitalocean-nix-tf": {
+      "neko": {
         "image": "${digitalocean_custom_image.nixos.id}",
-        "name": "digitalocean-nix-tf",
+        "name": "neko",
         "region": "sgp1",
-        "size": "s-1vcpu-1gb",
+        "size": "s-2vcpu-4gb",
         "ssh_keys": [
           "${data.digitalocean_ssh_key.default.id}"
         ]

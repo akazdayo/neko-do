@@ -5,7 +5,7 @@
 }: let
   deployConfig = {
     nodes.droplet = {
-      hostname = "HOSTIP HERE";
+      hostname = "host ip here";
       sshUser = "root";
       profiles.system = {
         user = "root";
